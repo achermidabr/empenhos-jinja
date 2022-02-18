@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <table id="data" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Unidade Gestora</th>
+        <th>Código da Unidade Gestora</th>
+        <th>Nota de Empenho</th>
+        <th>Valor Empenhado</th>
+        <th>Data do Lançamento</th>
+        <th>Nota de Empenho Original</th>
+        <th>Tipo de Empenho</th>
+        <th>DEMODALIDADEEMPENHO</th>
+        <th>NMORGAO</th>
+        <th>NMUNIDADEGESTORA</th>
+        <th>NMCREDOR</th>
+        <th>NUIDENTIFICACAOMASCARADO</th>
+        <th>NMMODALIDADEAPLICACAO</th>
+        <th>NMGRUPONATUREZADESPESA</th>
+        <th>NMSUBELEMENTO</th>
+        <th>AGRUPAMENTO</th>
+        <th>NUCONTRATO</th>
+        <th>DETIPOCONTRATO</th>
+        <th>VLORIGINAL</th>
+        <th>VLATUAL</th>
+        <th>NUPRAZO</th>
+        <th>DATA_INICIO</th>
+        <th>DATA_FIM</th>
+        <th>ORIGEM</th>
+        <th>OBJETO</th>
+        <th>RESUMO</th>
+        <th>CONTRATADO</th>
+        <th>IDCONTRATADO</th>
+        <th>NUPROCESSO</th>
+        <th>NUEDITAL</th>
+        <th>NUDOCUMENTO</th>
+        <th>DEHISTORICOEMPENHO</th>
+        <th>URL_EMPENHO</th>
+        <th>URL_CONTRATO</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    $(document).ready(function () {
+      $('#data').DataTable({
+        ajax: '/api/data',
+        serverSide: true,
+        columns: [
+          {data: 'UGEMPENHO'},
+          {data: 'CDUNIDADEGESTORA', searchable: false, orderable: false},
+          {data: 'NUNOTAEMPENHO', searchable: false, orderable: false},
+          {data: 'VLEMPENHO', searchable: false, orderable: false},
+          {data: 'DTLANCAMENTO', searchable: false, orderable: false},
+          {data: 'NUNOTAEMPENHOORIGINAL', searchable: false, orderable: false},
+          {data: 'NMTIPOEMPENHO', searchable: false, orderable: false},
+          {data: 'DEMODALIDADEEMPENHO', searchable: false, orderable: false},
+          {data: 'NMORGAO'},
+          {data: 'NMUNIDADEGESTORA'},
+          {data: 'NMCREDOR'},
+          {data: 'NUIDENTIFICACAOMASCARADO', searchable: false, orderable: false},
+          {data: 'NMMODALIDADEAPLICACAO', searchable: false, orderable: false},
+          {data: 'NMGRUPONATUREZADESPESA', orderable: false},
+          {data: 'NMSUBELEMENTO', orderable: false},
+          {data: 'AGRUPAMENTO', searchable: false, orderable: false},
+          {data: 'NUCONTRATO', searchable: false, orderable: false},
+          {data: 'DETIPOCONTRATO', searchable: false, orderable: false},
+          {data: 'VLORIGINAL', searchable: false, orderable: false},
+          {data: 'VLATUAL', searchable: false, orderable: false},
+          {data: 'NUPRAZO', searchable: false, orderable: false},
+          {data: 'DATA_INICIO', searchable: false, orderable: false},
+          {data: 'DATA_FIM', searchable: false, orderable: false},
+          {data: 'ORIGEM', searchable: false, orderable: false},
+          {data: 'OBJETO', orderable: false},
+          {data: 'RESUMO', orderable: false},
+          {data: 'CONTRATADO', searchable: false, orderable: false},
+          {data: 'IDCONTRATADO', searchable: false, orderable: false},
+          {data: 'NUPROCESSO', searchable: false, orderable: false},
+          {data: 'NUEDITAL', searchable: false, orderable: false},
+          {data: 'NUDOCUMENTO', searchable: false, orderable: false},
+          {data: 'DEHISTORICOEMPENHO', searchable: false, orderable: false},
+          {data: 'URL_EMPENHO', searchable: false, orderable: false},
+          {data: 'URL_CONTRATO', searchable: false, orderable: false}
+        ],
+      });
+    });
+  </script>
+{% endblock %}
